@@ -20,17 +20,25 @@ optional arguments:
 
 ## find-file-doublets
 ```
-usage: find-file-doublets.py [-h] [-r] [-o OUTPUT] path
+usage: find-file-doublets.py [-h] [-r] [-v] [--match PATTERN] [--matchnot]
+                             [--matchout STRING]
+                             path [path ...]
 
-Searches a folder for multiple occurrences of the same file
+Searches a number of paths for multiple occurrences of the same files
 
 positional arguments:
-  path                  Relative or full path to search for doublets
+  path               A number of paths to search for doublet files
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -r, --recursive       Search recursively into subfolders
-  -o OUTPUT, --output OUTPUT
+  -h, --help         show this help message and exit
+  -r, --recursive    Include subdirectories
+  -v, --verbose      Output all directory names for progress purpose
+  --match PATTERN    Output a list of doublet files matching shell style
+                     wildcards in PATTERN
+  --matchnot         Change the output of match list to doublet files not
+                     matching PATTERN
+  --matchout STRING  Format output of match list. Include FILENAME as
+                     placeholder for doublet file in STRING
 ```
 
 ## verify-backup
